@@ -1,0 +1,497 @@
+/*GLOBALE REGLER*/
+
+html,
+body {
+    padding: 0;
+    margin: 0;
+    font-family: sans-serif;
+    scroll-behavior: smooth;
+}
+
+body {
+    background-image: url(img/fruity_background.jpg);
+    background-attachment: fixed;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+img {
+    max-width: 100%;
+}
+
+h1, h2 {
+    text-align: center;
+    margin: 0;
+}
+
+h2 {
+    color: rgb(125, 136, 24);
+}
+
+
+/*GLOBALE REGLER - HEADER & FOOTER*/
+
+.site-header,
+.site-footer {
+    max-width: 90%;
+    background-color: rgb(252, 240, 218);
+}
+
+
+/*HEADER*/
+
+.site-header {
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 0;
+}
+
+
+/*SIDENS LOGO*/
+
+.logo {
+    display: block;
+    text-align: center;
+}
+
+.logo img {
+    border-radius: 50px;
+}
+
+
+/*NAVBAR*/
+
+.menu {
+    display: flex;
+    align-items: center;
+}
+
+.menu ul {
+    list-style: none;
+    font-weight: bold;
+    font-size: 3vw;
+    margin: 0;
+    padding-bottom: 10px;
+}
+
+.menu ul a {
+    text-decoration: none;
+    color: rgb(124, 59, 113);
+}
+
+
+/*Til Burgermenu*/
+
+.menu-check {
+    display: none;
+}
+
+
+/*OVERFLØDIG KODE - Kunne sagtens laves anderledes, hvis man fjerne DIV'en.
+Jeg har dog valgt at beholde den, da det ville være besværligt at ændre, 
+ift. burger-menuen*/
+
+.navbar .menu-links {
+    width: 80%;
+}
+
+
+/*KNAPPEN "TILBUD" i Menuen*/
+
+.button,
+.menu ul .button a {
+    color: red;
+    background-color: Yellow;
+    border-radius: 25px;
+    text-align: center;
+    width: 20%;
+}
+
+
+/*SHOPCART---INDKØBSKURV*/
+
+
+/*(Disse gælder også for Footer)*/
+
+.shopcart {
+    width: 20%;
+    display: flex;
+    justify-content: right;
+    align-items: center;
+    padding: 10px;
+    transform: scale(1);
+    transition: all 0.3s linear;
+}
+
+.shopcart a {
+    width: 70%;
+    height: 70%;
+}
+
+.shopcart a:hover {
+    transform: scale(1.3);
+}
+
+
+/*MAIN CONTENT*/
+
+.main-content {
+    margin: 0;
+}
+
+
+/*Regler for alle sektioners billeder*/
+
+.section a{
+    width: 50%;
+}
+
+.section a img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+
+/*Regler for sidens sektioner*/
+
+.section {
+    background-color: rgb(255, 255, 255);
+    width: 90%;
+    height: 300px;
+    margin-left: auto;
+    margin-right: auto;
+    display: flex;
+    justify-content: center;
+}
+
+
+/*Ændrer styling for hver 2. sektion (lige numre)*/
+
+.section:nth-child(even) {
+    background-color: rgb(208, 235, 208);
+    width: 90%;
+    height: 300px;
+    margin-left: auto;
+    margin-right: auto;
+    display: flex;
+    flex-direction: row-reverse;
+}
+
+
+/*Intro-sektion på tilbud.html*/
+
+.tilbud-intro {
+    background-color: rgb(255, 255, 255);
+    width: 90%;
+    height: 200px;
+    padding: 60px 0px 10px 0px;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+}
+
+.tilbud-intro h1 {
+    color: red;
+    background-color: yellow;
+    max-width: 50%;
+    margin-left: auto;
+    margin-right: auto;
+    border-radius: 25px;
+}
+
+
+/*Tekst i sektioner ved siden af billeder*/
+
+.photo-text {
+    width: 50%;
+    display: block;
+    text-align: center;
+    padding: 10px;
+    margin-top: auto;
+    margin-bottom: auto;
+}
+
+/*Tilbud-billeder: POP-UP => MANIPULATION med JavaScript!*/
+
+.img-outer {
+    position: fixed;
+    width: 100vw;
+    height: 100vh;
+    background: rgba(0, 0, 0, 0.75);
+    top: 0;
+    left: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    opacity: 0;
+    transition: opacity 0.3s;
+    pointer-events: none;
+}
+
+.open {
+    opacity: 1;
+    pointer-events: all;
+    overflow: auto;
+}
+
+.img-inner {
+    position: relative;
+    transform: scale(0.1);
+    transition: transform 0.5s;
+    max-width: 40%;
+    background-color: white;
+    padding: 10px;
+    border-radius: 25px;
+}
+
+
+.open .img-inner {
+    transform: scale(1);
+}
+
+.image-view {
+    border-radius: 25px;
+} 
+
+.close-img {
+    position: absolute;
+    top: 0;
+    right: 0;
+}
+
+.pop-up-text {
+    text-align: center;
+    font-weight: bold;
+}
+
+/*TEKST til POP-UP billeder på Tilbuds-siden*/
+
+.text-head {
+    text-align: center;
+}
+
+.text-view {
+    text-align: center;
+}
+
+
+/*Regler for kontakt.html og kurv.html*/
+
+.contact-page,
+.shopcart-page {
+    height: 450px;
+    padding-top: 30px;
+    background-color: white;
+    width: 90%;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+}
+
+.shopcart-page {
+    padding-top: 100px;
+    display: block;
+}
+
+
+/*KONTAKT-FORMULAR (kontakt.html)*/
+
+.c-form {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+
+#c-name,
+#c-email,
+#c-text,
+#form-button {
+    width: 40%;
+    padding: 5px;
+    margin: 5px;
+}
+
+#form-button {
+    background-color: red;
+    color: yellow;
+    font-size: large;
+    font-weight: bolder;
+    padding: 10px;
+}
+
+
+/*Regler for 3 røde links til tilbud-siden på forsiden*/
+
+.tilbud-links {
+    text-decoration: none;
+    color: red;
+    font-weight: bold;
+    font-size: 3vw;
+    transition: transform .2s;
+}
+
+
+/*Styling af paragrafer med FED på forsiden*/
+
+.tilbud {
+    font-weight: 900;
+    font-style: unset
+}
+
+
+/*FOOTER*/
+
+.site-footer {
+    margin-left: auto;
+    margin-right: auto;
+    padding: 20px;
+    display: flex;
+    align-items: center;
+}
+
+
+/*Røde pil i bunden*/
+
+.top {
+    flex-grow: 1;
+    text-align: center;
+}
+
+.top img {
+    background-color: yellow;
+    padding: 10px;
+    border-radius: 100px;
+    max-width: 50%;
+    max-height: 50%;
+}
+
+
+/*Kontakt-link i footer*/
+
+.contact {
+    flex-grow: 1;
+    text-align: right;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 4vw;
+    color: rgb(153, 50, 136);
+}
+
+
+/*Facebook-link i footer*/
+
+.facebook {
+    flex-grow: 1;
+    text-align: right;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 4vw;
+    color: rgb(153, 50, 136);
+}
+
+
+/*Indkøbskurv i footer*/
+
+.footer-shopcart {
+    flex-grow: 1;
+    text-align: center;
+}
+
+
+/*Søgefelt*/
+
+.search {
+    flex-grow: 1;
+    text-align: right;
+}
+
+
+/*Søgefelt*/
+
+
+/*DESKTOP ONLY*/
+
+@media screen and (min-width: 800px) {
+    h1,
+    h2 {
+        font-size: xx-large;
+    }
+    /*Regler for navbar links*/
+    .menu ul {
+        display: flex;
+        justify-content: space-around;
+        list-style: none;
+        padding-top: 20px;
+        padding-bottom: 20px;
+        padding-right: 20px;
+        font-weight: bold;
+        font-size: 2.3vw;
+        margin: 0;
+    }
+    /*Fjerner burger-menuen*/
+    .menu-check-label {
+        display: none;
+    }
+    /*Lave regler og hover-effekter for menu-links*/
+    .menu li,
+    .site-footer a {
+        transform: scale(1);
+        transition: all 0.2s linear;
+        transform-origin: left;
+    }
+    .menu li:hover,
+    .site-footer a:hover {
+        transform: scale(1.1);
+    }
+    .menu a:hover,
+    .site-footer a:hover {
+        transition: all 0.2s linear;
+    }
+    .menu a:hover,
+    .site-footer a:hover {
+        color: rgb(15, 216, 62);
+    }
+    /*Regler for tilbud-links på forsiden*/
+    .tilbud-links {
+        font-size: 1.5vw;
+        transition: all 0.2s linear;
+        line-height: 2vw;
+    }
+    .tilbud-links:hover {
+        font-size: 2vw;
+    }
+    .site-footer a {
+        display: block;
+        font-size: 2.3vw;
+    }
+    /*SHOPCART---INDKØBSKURV*/
+    .shopcart a {
+        width: 80%;
+        height: 80%;
+    }
+}
+
+
+/*NAVBAR => "BURGER-MENUEN"*/
+
+@media screen and (max-width: 799px) {
+    /*Regler for burger-menu*/
+    .menu-check-label {
+        display: inline-block;
+        padding: 10px;
+    }
+    /*Gør burger-menu usynlig som standard*/
+    .menu ul {
+        display: none;
+    }
+    /*Gør burger-menu SYNLIG vha. tjekboksen*/
+    .menu-check:checked+ul {
+        display: block;
+    }
+    .navbar .menu-items li {
+        padding: 5px;
+    }
+}
